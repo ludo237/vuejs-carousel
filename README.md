@@ -21,7 +21,7 @@ It takes the best from AngularJS and ReactJS. More info on [VueJS Official Site]
 # Features
 
 * You can handle multiple albums in one single page
-* `Next` and `Previous` link scoped to the current album
+* `Next` and `Previous` links scoped to the current album
 * CSS mobile ready, the photo gallery is responsive
 * Close button
 * No jQuery or query DOM needed
