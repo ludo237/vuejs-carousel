@@ -16,7 +16,7 @@ Piece of cake!
 
 It's a good alternative to the current caos of AngulaJS, hoping that v2 will fix everything.
 Also I'm not a fan of the Shadow DOM of ReactJS. VueJS provide the right tools for the right tasks on the web
-It takes the best from AngularJS and ReactJS.
+It takes the best from AngularJS and ReactJS. More info on [VueJS Official Site](http://vuejs.org/)
 
 # Features
 
