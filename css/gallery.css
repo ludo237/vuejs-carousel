@@ -1,0 +1,139 @@
+/**
+ *
+ * LESS template for the gallery system
+ *
+ * How to use: 
+ * Simply Run the less processor that you have in order to "compile" this in CSS3
+ *
+ * @author Claudio Ludovico Panetta (@ludo237)
+ * @licence MIT
+ **/
+.gallery {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -webkit-transform: scale(0.2);
+  -ms-transform: scale(0.2);
+  transform: scale(0.2);
+  background: #0e0e0e;
+  height: 100%;
+  left: -99999px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.2s ease;
+  transition: opacity 0.5s ease, transform 0.2s ease;
+}
+.gallery.visible {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  left: 0;
+}
+.gallery a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.gallery a:hover {
+  color: #7ebd39;
+}
+.gallery .title {
+  background: rgba(0, 0, 0, 0.84);
+  height: 60px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+}
+.gallery .title h1 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  height: 100%;
+  line-height: 60px;
+  margin: 0;
+  text-align: center;
+}
+.gallery .title .close {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  border-radius: 20px;
+  float: none;
+  font-size: 4rem;
+  font-weight: bold;
+  height: 40px;
+  line-height: .8em;
+  margin: 10px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-shadow: initial;
+  top: 0;
+  width: 40px;
+}
+.gallery .container {
+  height: 100%;
+  position: relative;
+  white-space: nowrap;
+}
+.gallery .container .current-image {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: inline-block;
+  height: 100%;
+  left: 0;
+  line-height: 1px;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+.gallery .container .current-image:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  margin-right: -1px;
+  vertical-align: middle;
+  width: 1px;
+}
+.gallery .container .current-image.loaded {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.gallery .container .current-image img {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+  width: auto;
+}
+.gallery .controls {
+  background: rgba(0, 0, 0, 0.84);
+  bottom: 0;
+  color: #ffffff;
+  font-size: 1.0rem;
+  height: 60px;
+  left: 0;
+  line-height: 60px;
+  padding: 0 20px;
+  position: absolute;
+  width: 100%;
+  z-index: 20;
+}
+.gallery .controls .previous-image {
+  width: 120px;
+}
+.gallery .controls .next-image {
+  width: 120px;
+}

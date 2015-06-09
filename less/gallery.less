@@ -1,0 +1,176 @@
+/**
+ *
+ * LESS template for the gallery system
+ *
+ * How to use: 
+ * Simply Run the less processor that you have in order to "compile" this in CSS3
+ *
+ * @author Claudio Ludovico Panetta (@ludo237)
+ * @licence MIT
+ **/
+ 
+ // Necessary imports
+ @import (reference) 'variable.less';
+ @import (reference) 'mixins.less';
+
+// Sort of main namespace
+.gallery
+{
+  .opacity(0);
+  .transform(scale(0.2));
+  
+  background: @black;
+  height: 100%;
+  left: -99999px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.2s ease;
+  transition: opacity 0.5s ease, transform 0.2s ease;
+
+  &.visible
+  {
+    .opacity(1);
+    .transform(scale(1));
+
+    left: 0;
+  }
+
+  // All anchor must follow this rules set
+  & a
+  {
+    // Behaviour applied when the anchor is hovered
+    &:hover
+    {
+      color: @green; // Replace with your own color here
+    }
+
+    color: @white; // Replace with your own color here
+    text-decoration: none;
+  }
+  
+  // Title class, the DOMNode will be a direct child of .gallery
+  & .title
+  {
+    background: @lightbg-text;
+    height: 60px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+  	
+    // Header syle for the title itself
+    & h1
+    {
+      color: @white;
+      font-size: 1.2rem;
+      height: 100%;
+      line-height: 60px;
+      margin: 0;
+      text-align: center;
+    }
+
+    // Due to an issue with Twitter Bootstrap we have to
+    // rewrite the .close class
+    & .close
+    {
+      .opacity(1);
+
+      border-radius: 20px;
+      float: none;
+      font-size: 4rem;
+      font-weight: bold;
+      height: 40px;
+      line-height: .8em;
+      margin: 10px;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      text-shadow: initial;
+      top: 0;
+      width: 40px;
+    }
+  }
+  
+  // Photo container, this is the center of the photo gallery
+  & .container
+  {
+    height: 100%;
+    position: relative;
+    white-space: nowrap;
+    
+    // this class will be used on the <Figure> parent
+    & .current-image
+    {
+      &:before
+      {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        margin-right: -1px;
+        vertical-align: middle;
+        width: 1px;
+      }
+
+      .opacity(0);
+      .transition(all 0.5s ease);
+
+      display: inline-block;
+      height: 100%;
+      left: 0;
+      line-height: 1px;
+      margin: 0;
+      position: relative;
+      text-align: center;
+      width: 100%;
+
+      // When the image is loaded we will attach this class to create a nice effect
+      &.loaded
+      {
+        .opacity(1);
+      }
+      
+      // Current image
+      & img
+      {
+        display: inline-block;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        vertical-align: middle;
+        width: auto;
+      }
+    }
+  }
+  
+  // Photo gallery controls
+  & .controls
+  {
+    background: @lightbg-text;
+    bottom: 0;
+    color: @white;
+    font-size: 1.0rem;
+    height: 60px;
+    left: 0;
+    line-height: 60px;
+    padding: 0 20px;
+    position: absolute;
+    width: 100%;
+    z-index: 20;
+
+    & .previous-image
+    {
+      width: 120px;
+    }
+
+    & .next-image
+    {
+      width: 120px;
+    }
+  }
+
+}
