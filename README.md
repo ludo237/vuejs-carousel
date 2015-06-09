@@ -6,7 +6,11 @@ or whatnot in order to accomplish a simple task like this.
 
 # How to install
 
-Coming soon...
+Piece of cake!
+* Download this repository, or clone it
+* Install `node` if you don't have it
+* Run `lessc less/gallery.less > css/gallery.css` if you change the style or whatever
+* Try the demo using `index.html`
 
 # Why VueJS
 
