@@ -22,8 +22,13 @@
         },
 
         methods: {
+<<<<<<< HEAD
             // When click on an anchor of image this will be triggered
             viewImage: function () {
+=======
+            // When click on an anchor of image this will triggered
+            viewImage: function (event) {
+>>>>>>> origin/master
                 // TODO: This seems utter bullshit, refactor this pls
                 this.next = event.target.parentNode.nextElementSibling;
                 this.previous = event.target.parentNode.previousElementSibling;
