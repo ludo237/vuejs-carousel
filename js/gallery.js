@@ -22,7 +22,7 @@
         },
 
         methods: {
-            // When click on an anchor of image this will triggered
+            // When click on an anchor of image this will be triggered
             viewImage: function () {
                 // TODO: This seems utter bullshit, refactor this pls
                 this.next = event.target.parentNode.nextElementSibling;
