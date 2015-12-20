@@ -1,23 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Ludo237 Photo Gallery</title>
-        <!-- Bootstrap Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-        <!-- Compiled version of Gallery.less -->
+        <title>Simple Photo Gallery</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/gallery.css">
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
     </head>
-    
+
     <body class="container">
         <h1>Ludo237 Photo Gallery</h1>
         <p class="lead">
@@ -25,66 +17,59 @@
             <a href="https://github.com/ludo237/photo-gallery" rel="no-follow">ludo237/photo-gallery</a>
         </p>
         <div id="gallery" class="col-lg-12">
-            <hr aria-disabled="true" />
-            <!-- Dummy data !-->
-            <div class="albums row">
-                <!-- One album with a bunch of photos -->
-                <div class="album col-xs-12">
-                    <h4>First Album</h4>
-                    <figure data-title="First Photo of First Album" data-original="http://dummyimage.com/600x400/000/fff.png&text=First+Photo"
-                    v-on="click: viewImage($event)">
-                        <img alt="First Photo of First Album" class="img-responsive pull-left" draggable="false" itempop="image" src="http://dummyimage.com/120x120/000/fff.png&text=First+Photo"
-                        role="img" />
-                    </figure>
-                    <figure data-title="Second Photo of First Album" data-original="http://dummyimage.com/800x600/000/fff.png&text=Second+Photo"
-                    v-on="click: viewImage($event)">
-                        <img alt="Second Photo of First Album" class="img-responsive pull-left" draggable="false" itempop="image" src="http://dummyimage.com/120x120/000/fff.png&text=Second+Photo"
-                        role="img" />
-                    </figure>
-                    <figure data-title="Third Photo of First Album" data-original="http://dummyimage.com/1920x1080/000/fff.png&text=Third+Photo"
-                    v-on="click: viewImage($event)">
-                        <img alt="Third Photo of First Album" class="img-responsive pull-left" draggable="false" itempop="image" src="http://dummyimage.com/120x120/000/fff.png&text=Third+Photo"
-                        role="img" />
-                    </figure>
+
+          <pre>{{ $data | json }}</pre>
+
+          <h4>First Album</h4>
+          <div class="photos">
+            <figure>
+                <img title="First Photo of First Album"
+                alt="First Photo of First Album"
+                class="img-responsive pull-left"
+                data-original="http://dummyimage.com/600x400/000/fff.png&text=First+Photo"
+                src="http://dummyimage.com/120x120/000/fff.png&text=First+Photo"
+                @click="toggleSelectedImage"/>
+            </figure>
+            <figure>
+                <img title="Second Photo of First Album"
+                alt="Second Photo of First Album"
+                class="img-responsive pull-left"
+                data-original="http://dummyimage.com/600x400/000/fff.png&text=Second+Photo"
+                src="http://dummyimage.com/120x120/000/fff.png&text=Second+Photo"
+                @click="toggleSelectedImage"/>
+            </figure>
+            <figure>
+                <img title="Third Photo of First Album"
+                alt="Third Photo of First Album"
+                class="img-responsive pull-left"
+                data-original="http://dummyimage.com/600x400/000/fff.png&text=Third+Photo"
+                src="http://dummyimage.com/120x120/000/fff.png&text=Third+Photo"
+                @click="toggleSelectedImage"/>
+            </figure>
+          </div>
+          <div class="gallery" :class="{visible: photo.selected}">
+            <header class="title">
+                <h1>{{ title }}</h1>
+                <div class="close">
+                    <a href="#closeGallery" @click="closeGallery">&times;</a>
                 </div>
-                <!-- Another album with one lonley photo -->
-                <div class="col-xs-12">
-                    <h4>Second Album</h4>
-                    <figure data-title="First Photo of Second Album" data-original="http://dummyimage.com/600x400/ccc/000.png&text=First+Photo"
-                    v-on="click: viewImage($event)">
-                        <img alt="First Photo of Second Album" class="img-responsive pull-left" draggable="false" itempop="image" src="http://dummyimage.com/120x120/ccc/000.png&text=First+Photo"
-                        role="img" />
-                    </figure>
+            </header>
+            <div class="container">
+                <figure class="current-image" :class="{loaded: photo.selected}">
+                    <img v-bind:src="photo.src">
+                </figure>
+            </div>
+            <div class="controls">
+                <div class="pull-left previous-image text-left">
+                    <a href="#previous" @click="previousPhoto">&laquo; Previous</a>
+                </div>
+                <div class="next-image pull-right text-right">
+                    <a href="#next" @click="nextPhoto">Next &raquo;</a>
                 </div>
             </div>
-            <!-- This should become a Component -->
-            <div class="gallery" v-class="visible: isVisible" inline-template>
-                <header class="title">
-                    <h1>{{ title }}</h1>
-                    <div class="close">
-                        <a href="#closeGallery" v-on="click: closeGallery">&times;</a>
-                    </div>
-                </header>
-                <div class="container">
-                    <figure class="current-image" v-class="loaded: isVisible">
-                        <img v-attr="src: image">
-                    </figure>
-                </div>
-                <div class="controls">
-                    <div class="pull-left previous-image text-left">
-                        <a href="#previous" v-on="click: previousPhoto">&laquo; Previous</a>
-                    </div>
-                    <div class="next-image pull-right text-right">
-                        <a href="#next" v-on="click: nextPhoto">Next &raquo;</a>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-        
-        <!-- Pull in vueJS from CDN -->
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.11.10/vue.min.js" type="text/javascript"></script>
-        <!-- Pull in the photo gallery script -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.12/vue.min.js" type="text/javascript"></script>
         <script src="js/gallery.js" type="text/javascript"></script>
     </body>
-
 </html>

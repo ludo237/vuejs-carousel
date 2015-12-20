@@ -9,62 +9,57 @@
         el: "#gallery",
 
         data: {
-            // Toggle photo gallery visibility
-            isVisible: false,
-            // Current photo title
-            title: '',
-            // Current image src
-            image: '',
-            // Next and Previous object
-            // from the current photo selected
-            next: null,
-            previous: null
+            photo: {
+              // Current photo title
+              title: "",
+              // Current image src
+              src: "",
+              // Determine if the photo has been selected
+              selected: false,
+              next: null,
+              previous: null,
+            },
         },
 
         methods: {
-            // When click on an anchor of image this will be triggered
-            viewImage: function (event) {
-                // TODO: This seems utter bullshit, refactor this pls
-                this.next = event.target.parentNode.nextElementSibling;
-                this.previous = event.target.parentNode.previousElementSibling;
-                this.title = event.target.parentNode.getAttribute("data-title");
-                this.image = event.target.parentNode.getAttribute("data-original");
-                // Show the gallery itself
-                this.isVisible = !this.isVisible;
-                event.preventDefault();
-            },
-            // Close the gallery
-            closeGallery: function (event) {
-                this.isVisible = false;
-                this.title = '';
-                this.image = '';
-                this.counter = 0;
-                event.preventDefault();
-            },
-            // Next photo anchor
-            nextPhoto: function () {
-                if(this.next !== null && this.next.nodeName === "FIGURE"){
-                    this.title = this.next.getAttribute("data-title");
-                    this.image = this.next.getAttribute("data-original");
-                    this.next = this.next.nextElementSibling;
-                    if(this.next !== null){
-                        this.previous = this.next.previousElementSibling;
-                    }
-                }
+          toggleSelectedImage: function(event) {
+            this.changeImage(event.target);
+          },
 
-                event.preventDefault();
-            },
-            // Previous photo anchor
-            previousPhoto: function () {
-                if(this.previous !== null && this.previous.nodeName === "FIGURE"){
-                    this.title = this.previous.getAttribute("data-title");
-                    this.image = this.previous.getAttribute("data-original");
-                    this.next = this.previous.nextElementSibling;
-                    this.previous = this.previous.previousElementSibling;
-                }
+          closeGallery: function() {
+            this.photo.title = "";
+            this.photo.src = "";
+            this.photo.selected = false;
+          },
 
-                event.preventDefault();
+          nextPhoto: function () {
+            if(this.photo.next !== null && this.photo.next.nodeName === "FIGURE") {
+              var photos = this.photo.next.children;
+              if(typeof photos !== 'undefined' && photos.length > 0)
+              {
+                this.changeImage(photos[0]);
+              }
             }
-        }
+          },
+
+          previousPhoto: function () {
+            if(this.photo.previous !== null && this.photo.previous.nodeName == "FIGURE") {
+              var photos = this.photo.previous.children;
+              if(typeof photos !== 'undefined' && photos.length > 0)
+              {
+                this.changeImage(photos[0]);
+              }
+            }
+          },
+
+          changeImage: function(photo) {
+            this.photo.title = photo.getAttribute("title");
+            this.photo.src = photo.getAttribute("data-original");
+            this.photo.next = photo.parentNode.nextElementSibling;
+            this.photo.previous = photo.parentNode.previousElementSibling;
+            this.photo.selected = true;
+          },
+
+        },
     });
 })();
