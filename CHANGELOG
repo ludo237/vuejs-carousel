@@ -1,0 +1,19 @@
+# Change Log
+All notable changes to this project will be documented in this file.
+
+## [0.1] - 29-11-2016
+
+### Added
+- Add first version of the carousel component
+- Add simple example
+- Add Readme
+- Add this changelog
+- Add package.json file
+
+### Changed
+- Change the example file to respect the new structure of the carousel
+
+### Fixed
+
+### Removed
+- Remove old file structure and source code

@@ -1,32 +1,47 @@
-# Vue JS Photo Gallery
+# VueJs Carousel
 
-This repository contains a photo gallery written with VueJS. It's easy to use and lightweight. 
-This repository aims to deliver a ready to use gallery for your project without plugins
-or whatnot in order to accomplish a simple task like this.
+    Clean and neat carousel based on VueJs
 
-# How to install
 
-Piece of cake!
-* Download this repository, or clone it
-* Install `node` if you don't have it
-* Run `lessc less/gallery.less > css/gallery.css` if you change the style or whatever
-* Try the demo using `index.html`
+## How to install
+- Either download or clone this repository
+- Run `npm install` this will install all the necessary tools from NPM
+- Run `npm run build` this will create the dist folder
+- Grab the file inside the dist folder and follow the [How to use section](#how-to-use)
 
-# Why VueJS
 
-It's a good alternative to the current caos of AngulaJS, hoping that v2 will fix everything.
-Also I'm not a fan of the Shadow DOM of ReactJS. VueJS provide the right tools for the right tasks on the web
-It takes the best from AngularJS and ReactJS. More info on [VueJS Official Site](http://vuejs.org/)
+## How to use
+This carousel is pretty easy to use. Put the source code inside your page:
 
-# Features
+     <script src="dist/carousel.js"></script>
 
-* You can handle multiple albums in one single page
-* `Next` and `Previous` links scoped to the current album
-* CSS mobile ready, the photo gallery is responsive
-* Close button
-* No jQuery or query DOM needed
+Add the component to your page:
 
-# How to contribute
+    <div id="your-application-id">
+      <carousel source="your-api-source"></carousel>
+    </div>
 
-Feel free to open issues or pull request, I'm open to any kinf of improvements. 
+Try it with a source, for example you can use [Json Placeholder](http://jsonplaceholder.typicode.com/photos?_limit=10)
 
+
+## Configuration
+The current state of the component have an array of `photos` object and it expects this attributes:
+
+- albumId
+- id
+- thumbnailUrl
+- title
+- url
+
+**Be Aware**: If you have a different API structure you have to change the code a little bit in particular
+you have to change the attributes of `selectedPhoto` and of `photos`. I will try to make this as dynamic as 
+possibile but I'm still learning Javascript.
+
+
+## License
+
+See [License file](LICENSE) for further details.
+
+## Changelog
+
+See [Changelog File](CHANGELOG) for further details.
