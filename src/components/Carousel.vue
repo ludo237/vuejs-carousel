@@ -188,9 +188,12 @@ export default {
     padding: 0;
     margin: 0;
     background: black;
+    width: 95%;
+    max-width: 900px;
 }
 
 .Theater__information {
+    float: left;
     background: white;
     color: black;
     width: 25%;
@@ -207,13 +210,9 @@ export default {
 }
 
 .Theater__stage {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
+    float: left;
     position: relative;
-    flex-direction: column;
     width: 75%;
-    align-items: center;
 }
 
 .Theater__figure {
@@ -225,6 +224,8 @@ export default {
     max-width: 100%;
     max-height: 100vh;
     vertical-align: middle;
+    margin: 0 auto;
+    display: block;
 }
 
 .Theater__commands {
