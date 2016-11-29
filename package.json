@@ -1,7 +1,7 @@
 {
   "name": "vue-carousel",
-  "description": "Light and neat photo gallery based on VueJs",
-  "version": "1.0.0",
+  "description": "Complete photo carousel build with VueJS and web standards in mind",
+  "version": "0.1.0",
   "author": "ludo237",
   "private": false,
   "license": "MIT",
@@ -16,7 +16,7 @@
   "main": "src/carousel.js",
   "scripts": {
     "dev": "webpack-dev-server --open --inline --hot",
-    "build": "webpack --progress --hide-modules"
+    "build": "webpack --progress"
   },
   "repository": {
     "type": "git",

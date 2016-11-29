@@ -1,7 +1,6 @@
 # VueJs Carousel
 
-    Clean and neat carousel based on VueJs
-
+    Complete photo carousel build with VueJS and web standards in mind
 
 ## How to install
 - Either download or clone this repository
