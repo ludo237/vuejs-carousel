@@ -15,7 +15,8 @@
   ],
   "main": "src/carousel.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --inline --hot"
+    "dev": "webpack-dev-server --open --inline --hot",
+    "prod": "webpack"
   },
   "repository": {
     "type": "git",
