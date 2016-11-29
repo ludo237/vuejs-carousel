@@ -16,7 +16,7 @@
   "main": "src/carousel.js",
   "scripts": {
     "dev": "webpack-dev-server --open --inline --hot",
-    "prod": "webpack"
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
@@ -37,5 +37,8 @@
     "vue-template-compiler": "^2.1.0",
     "webpack": "^2.1.0-beta.25",
     "webpack-dev-server": "^2.1.0-beta.0"
+  },
+  "engines": {
+    "node": "7.2.0"
   }
 }
