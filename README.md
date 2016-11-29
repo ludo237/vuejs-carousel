@@ -1,3 +1,7 @@
+[![Code Climate](https://codeclimate.com/github/ludo237/vuejs-carousel/badges/gpa.svg)](https://codeclimate.com/github/ludo237/vuejs-carousel)
+[![Test Coverage](https://codeclimate.com/github/ludo237/vuejs-carousel/badges/coverage.svg)](https://codeclimate.com/github/ludo237/vuejs-carousel/coverage)
+[![Issue Count](https://codeclimate.com/github/ludo237/vuejs-carousel/badges/issue_count.svg)](https://codeclimate.com/github/ludo237/vuejs-carousel)
+
 # VueJs Carousel
 
     Complete photo carousel build with VueJS and web standards in mind
