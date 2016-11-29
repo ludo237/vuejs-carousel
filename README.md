@@ -5,7 +5,7 @@
 ## How to install
 - Either download or clone this repository
 - Run `npm install` this will install all the necessary tools from NPM
-- Run `npm run build` this will create the dist folder
+- Run `npm run dev` this will create the dist folder
 - Grab the file inside the dist folder and follow the [How to use section](#how-to-use)
 
 
