@@ -2,6 +2,11 @@
 [![Test Coverage](https://codeclimate.com/github/ludo237/vuejs-carousel/badges/coverage.svg)](https://codeclimate.com/github/ludo237/vuejs-carousel/coverage)
 [![Issue Count](https://codeclimate.com/github/ludo237/vuejs-carousel/badges/issue_count.svg)](https://codeclimate.com/github/ludo237/vuejs-carousel)
 
+
+[![bitHound Overall Score](https://www.bithound.io/github/ludo237/vuejs-carousel/badges/score.svg)](https://www.bithound.io/github/ludo237/vuejs-carousel)
+[![bitHound Dev Dependencies](https://www.bithound.io/github/ludo237/vuejs-carousel/badges/devDependencies.svg)](https://www.bithound.io/github/ludo237/vuejs-carousel/master/dependencies/npm)
+[![bitHound Code](https://www.bithound.io/github/ludo237/vuejs-carousel/badges/code.svg)](https://www.bithound.io/github/ludo237/vuejs-carousel)
+
 # VueJs Carousel
 
     Complete photo carousel build with VueJS and web standards in mind
