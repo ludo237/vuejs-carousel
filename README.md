@@ -1,9 +1,13 @@
+[![npm version](https://img.shields.io/npm/v/vuejs-carousel.svg)](https://www.npmjs.com/package/vuejs-carousel)
+[![Downloads](https://img.shields.io/npm/dt/vuejs-carousel.svg)](https://www.npmjs.com/package/vuejs-carousel)
+[![License](https://img.shields.io/npm/l/vuejs-carousel.svg)](https://www.npmjs.com/package/vuejs-carousel)
+
 [![Code Climate](https://codeclimate.com/github/ludo237/vuejs-carousel/badges/gpa.svg)](https://codeclimate.com/github/ludo237/vuejs-carousel)
 [![Test Coverage](https://codeclimate.com/github/ludo237/vuejs-carousel/badges/coverage.svg)](https://codeclimate.com/github/ludo237/vuejs-carousel/coverage)
 [![Issue Count](https://codeclimate.com/github/ludo237/vuejs-carousel/badges/issue_count.svg)](https://codeclimate.com/github/ludo237/vuejs-carousel)
 
-
 [![bitHound Overall Score](https://www.bithound.io/github/ludo237/vuejs-carousel/badges/score.svg)](https://www.bithound.io/github/ludo237/vuejs-carousel)
+[![bitHound Dependencies](https://www.bithound.io/github/ludo237/vuejs-carousel/badges/dependencies.svg)](https://www.bithound.io/github/ludo237/vuejs-carousel/master/dependencies/npm)
 [![bitHound Dev Dependencies](https://www.bithound.io/github/ludo237/vuejs-carousel/badges/devDependencies.svg)](https://www.bithound.io/github/ludo237/vuejs-carousel/master/dependencies/npm)
 [![bitHound Code](https://www.bithound.io/github/ludo237/vuejs-carousel/badges/code.svg)](https://www.bithound.io/github/ludo237/vuejs-carousel)
 
