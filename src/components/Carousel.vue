@@ -71,8 +71,6 @@ export default {
          * Once the application is ready we call the api in order
          * to get the current list of photos. At the moment it's very
          * limited to a simple GET api
-         *
-         * TODO: I think that here is were we should normalize the data from the API
          */
         mounted() {
             this.$http.get(this.source).then((fetchedPhotos) => {
