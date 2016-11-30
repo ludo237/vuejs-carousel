@@ -16,4 +16,4 @@ const carousel = new Vue({
             console.log("Debug is on");
         }
     }
-})
+});
