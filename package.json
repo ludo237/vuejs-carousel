@@ -1,5 +1,5 @@
 {
-  "name": "vue-carousel",
+  "name": "vuejs-carousel",
   "description": "Complete photo carousel build with VueJS and web standards in mind",
   "version": "0.1.0",
   "author": "ludo237",
@@ -31,7 +31,7 @@
     "babel-loader": "^6.0.0",
     "babel-preset-es2015": "^6.0.0",
     "cross-env": "^3.0.0",
-    "css-loader": "^0.25.0",
+    "css-loader": "^0.26.0",
     "file-loader": "^0.9.0",
     "vue-loader": "^10.0.0",
     "vue-template-compiler": "^2.1.0",
