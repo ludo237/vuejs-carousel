@@ -12,8 +12,7 @@ const carousel = new Vue({
 
     mounted() {
         // Debug purpose
-        if(Vue.config.debug)
-        {
+        if(Vue.config.debug) {
             console.log("Debug is on");
         }
     }
