@@ -29,11 +29,6 @@ module.exports = {
           name: '[name].[ext]?[hash]'
         }
       },
-      {
-        test: /\.css/,
-        loaders: ['style-loader', 'css-loader'],
-        include: __dirname + '/src'
-      }
     ]
   },
   resolve: {

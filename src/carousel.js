@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueResource from "vue-resource";
 import Carousel from "./components/Carousel.vue";
-import styles from './carousel.css';
 
 Vue.use(VueResource);
 Vue.config.debug = true;
