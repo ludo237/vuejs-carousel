@@ -37,7 +37,7 @@ Try it with a source, for example you can use [Json Placeholder](http://jsonplac
 
 
 ## Configuration
-The current state of the component have an array of `photos` object and it expects this attributes:
+The current state of the component uses an array of `photos` object and it expects this attributes:
 
 - albumId
 - id
