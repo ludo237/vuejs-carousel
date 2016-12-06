@@ -1,13 +1,17 @@
+require("./shared/EventDispatcher.js");
+
 import Vue from "vue";
 import VueResource from "vue-resource";
-import Carousel from "./components/Carousel.vue";
+import PhotoGallery from "./components/PhotoGallery.vue";
+import Theater from "./components/Theater.vue";
 
 Vue.use(VueResource);
 Vue.config.debug = true;
 
 const carousel = new Vue({
     el: "#your-application-id",
-    components: { Carousel },
+
+    components: { PhotoGallery, Theater },
 
     mounted() {
         // Debug purpose
