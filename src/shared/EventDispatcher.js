@@ -1,5 +1,12 @@
 import Vue from "vue";
 
+/**
+ * EventDispatcher class
+ * 
+ * This class will create a global Vue instance
+ * that allows the application to fire and listen 
+ * on events from different components
+ */
 window.EventDispatcher = new class {
 
     constructor() {
