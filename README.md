@@ -13,9 +13,10 @@
 
 # VueJs Carousel
 
-    Complete photo carousel build with VueJS and web standards in mind
+    Easy to use VueJS component for Photo galleries, built with VueJS and web standards in mind
 
 ## How to install
+
 - Either download or clone this repository
 - Run `npm install` this will install all the necessary tools from NPM
 - Run `npm run dev` this will create the dist folder
