@@ -1,6 +1,20 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [0.2] - 07-12-2016
+
+### Added
+- Add Theater component
+- Add Photos component
+- Add new live demo with Bulma CSS framework
+
+### Removed
+- Remove PhotoGallery component
+- Remove old live demo
+
+### Fixed
+- Fix position of Theater component
+
 ## [0.1] - 29-11-2016
 
 ### Added
