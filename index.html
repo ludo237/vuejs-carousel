@@ -1,17 +1,102 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 100vh; min-height: 100vh">
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <title>vue-carousel</title>
+    <title>VueJs Carousel by Ludo237</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" integrity="sha384-dNpIIXE8U05kAbPhy3G1cz+yZmTzA6CY8Vg/u2L9xRnHjJiAK76m2BIEaSEV+/aU" crossorigin="anonymous">
-  </head>
-  <body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.css" crossorigin="anonymous">
+</head>
+<body>
+
     <div id="your-application-id">
-      <strong>Hello From Vue Carousel</strong>
-      <photo-gallery source="https://jsonplaceholder.typicode.com/photos?_limit=10"></photo-gallery>
-      <theater></theater>
+        <!-- Header section !-->
+        <header class="hero is-bold is-medium is-light is-bold">
+            <div class="hero-head">
+                <nav class="nav">
+                    <div class="container">
+                        <div class="nav-left">
+                            <a class="nav-item">
+                            <span class="icon">
+                                <i class="fa fa-fw fa-lg fa-camera"></i>
+                            </span>
+                            </a>
+                        </div>
+                        <span class="nav-toggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <div class="nav-right nav-menu">
+                            <a class="nav-item is-active" href="/">Home</a>
+                            <span class="nav-item">
+                            <a class="button is-info is-outlined" href="https://github.com/ludo237/vuejs-carousel" target="_blank">
+                                <span class="icon">
+                                    <i class="fa fa-github"></i>
+                                </span>
+                                <span>Download</span>
+                            </a>
+                        </span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title">VueJs Carousel <small><img src="https://img.shields.io/npm/v/vuejs-carousel.svg" alt="VueJs Version"></small></h1>
+                    <h2 class="subtitle">Easy to use VueJS component for Photo galleries, built with VueJS and web standards in mind</h2>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main section !-->
+        <section class="section">
+            <div class="container">
+                <div class="content">
+                    <h1>VueJs Carousel</h1>
+                    <p>VueJs Carousel is a photo gallery system that has two main components a <code>Photos</code> components that fetches the photos from a json request
+                    and renders them within a list and a <code>Theater</code> component used to display the full size of any selected photo from the gallery. The code is
+                    developed by following <code>ECMA Script 2015 and 2016</code> and is hosted on <strong>Github</strong>. Feel free to try this component and help me
+                    improving it by submitting issues or pull requests.</p>
+
+                    <h2>How to install</h2>
+                    <p></p>
+                    <ul>
+                        <li>Run <code>npm install vuejs-carousel --save</code></li>
+                        <li>Include the Carousel component in your script</li>
+                        <li>Use the two components <code>Photos</code> and <code>Theater</code> inside your page</li>
+                        <li>Remember to attach a source to the <code>Photos</code> component</li>
+                    </ul>
+
+                    <h2>Live Example</h2>
+                    <p>This live example uses <strong>JSON placeholder</strong> from <strong>typicode</strong> all thumbnails are 150x150 pixels and all the
+                    original images are 600x600 pixels.</p>
+                    <photos source="https://jsonplaceholder.typicode.com/photos?_limit=10"></photos>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simple footer !-->
+        <footer class="footer">
+            <div class="container">
+                <div class="content has-text-centered">
+                    <p>
+                        <strong>VueJs Carousel</strong> by <a href="http://claudioludovico.panetta.it">Ludo237</a>. The source code is licensed
+                        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is powered by <strong>Bulma</strong>
+                        and is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
+                    </p>
+                    <p>
+                        <a class="icon" href="https://github.com/ludo237">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <theater></theater>
     </div>
-    <script src="dist/carousel.js"></script>
-  </body>
+
+    <script src="dist/carousel.js" crossorigin="anonymous"></script>
+</body>
 </html>

@@ -1,14 +1,13 @@
-<template id="photo-gallery">
-    <div class="PhotoGallery">
-        <ul class="PhotoGallery__list">
-            <li class="PhotoGallery__item" v-for="(photo, index) in photos">
-                <figure class="PhotoGallery__figure image">
-                    <img class="PhotoGallery__image" :src="photo.thumbnailUrl" @click="selectThisPhoto(photo, index)"/>
-                </figure>
-            </li>
-        </ul>
-    </div>
+<template id="photos">
+    <ul class="Photos">
+        <li class="Photo" v-for="(photo, index) in photos">
+            <figure class="Photo__container">
+                <img class="Photo__source" :src="photo.thumbnailUrl" @click="selectThisPhoto(photo, index)"/>
+            </figure>
+        </li>
+    </ul>
 </template>
+
 <script>
     export default {
 
@@ -62,27 +61,24 @@
 </script>
 
 <style>
-.PhotoGallery {
-    overflow: hidden;
-}
-
-.PhotoGallery__list {
+.Photos {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
 }
 
-.PhotoGallery__item {
+.Photo {
     list-style-type: none;
 }
 
-.PhotoGallery__figure {
+.Photo__container {
     display: block;
 }
 
-.PhotoGallery__image {
+.Photo_source {
     display: block;
+    max-width: 100%;
 }
 </style>
