@@ -1,8 +1,8 @@
 {
   "name": "vuejs-carousel",
   "description": "Complete photo carousel build with VueJS and web standards in mind",
-  "version": "0.2.1",
-  "author": "ludo237",
+  "version": "0.2.2",
+  "author": "Claudio Ludovico Panetta <ludovico1990@hotmail.it>",
   "private": false,
   "license": "MIT",
   "keywords": [
@@ -23,8 +23,9 @@
     "url": "https://github.com/ludo237/vuejs-carousel.git"
   },
   "dependencies": {
-    "vue": "^2.1.0",
-    "vue-resource": "^1.0.3"
+    "vue": "^2.1.6",
+    "vue-resource": "^1.0.3",
+    "vuex": "^2.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
