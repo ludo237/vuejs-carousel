@@ -22,7 +22,7 @@
             </div>
             <div class="Theater__information">
                 <div class="Theater__header">
-                    <h4>{{ selectedPhoto.of }}</h4>
+                    <h4></h4>
                     <div class="Theater__command Theater__command--header">
                         <a href="#close-theater" @click.prevent="closeTheater">
                             <i class="fa fa-fw fa-lg fa-times" aria-hidden="true"></i>
@@ -35,44 +35,46 @@
         </div>
     </div>
 </template>
+
 <script>
     export default {
-
-        data() {
-            return {
-                selectedPhoto: {},
-            }
-        },
-
-        mounted() {
-            window.EventDispatcher.listen("photoHasBeenSelected", (photo) => {
-                this.changeSelectedPhoto(photo);
-            });
-        },
+        name: "Theater",
 
         methods: {
-
-            changeSelectedPhoto(photo) {
-                this.selectedPhoto = photo;
-            },
-
             previousPhoto(index) {
-              window.EventDispatcher.fire("previousPhotoHasBeenRequested", index);
+
+                index--;
+                let payload = {};
+                if (index > 0) {
+                    payload.photo = this.$store.getters.photos[index]
+                    payload.index = index;
+                }
+
+                this.$store.commit("changeSelectedPhoto", payload);
             },
 
             nextPhoto(index) {
-                window.EventDispatcher.fire("nextPhotoHasBeenRequested", index);
+                index++;
+                let payload = {};
+                if (index <= this.$store.getters.photos.length - 1) {
+                    payload.photo = this.$store.getters.photos[index]
+                    payload.index = index;
+                }
+                this.$store.commit("changeSelectedPhoto", payload);
             },
 
             closeTheater() {
-                this.changeSelectedPhoto({});
+                this.$store.commit("changeSelectedPhoto", {});
             },
         },
 
-        computed: {
+         computed: {
+            selectedPhoto() {
+                return this.$store.getters.selectedPhoto;
+            },
 
             isPhotoSelected() {
-                return Object.keys(this.selectedPhoto).length !== 0 && this.selectedPhoto.constructor === Object;
+                return this.$store.getters.isPhotoSelected;
             },
 
             isTheaterClose() {
@@ -80,11 +82,11 @@
                     "Theater--closed": !this.isPhotoSelected,
                 }
             },
-        }
+        },
     }
 </script>
-<style>
 
+<style>
 .Theater {
     position: fixed;
     top: 0;
@@ -170,4 +172,16 @@
 .Theater__command--header > a {
     color: black;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 </style>

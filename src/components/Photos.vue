@@ -10,51 +10,29 @@
 
 <script>
     export default {
+        name: "Photos",
 
-        props: ["source"],
+        props: {
+            source: { Type: String }
+        },
 
-        data() {
-            return {
-                photos: {},
+        computed: {
+            photos() {
+                return this.$store.getters.photos
             }
         },
 
         mounted() {
-
-            window.EventDispatcher.listen("previousPhotoHasBeenRequested", (index) => {
-                index--;
-                if (index > 0) {
-                    this.selectThisPhoto(this.photos[index], index);
-                } else {
-                    this.selectThisPhoto({});
-                }
-            });
-
-            window.EventDispatcher.listen("nextPhotoHasBeenRequested", (index) => {
-                index++;
-                if (index <= this.photos.length - 1) {
-                    this.selectThisPhoto(this.photos[index], index);
-                } else {
-                    this.selectThisPhoto({});
-                }
-            });
-
-            this.$http.get(this.source).then((fetchedPhotos) => {
-                this.photos = fetchedPhotos.data;
+            this.$http.get(this.source).then((response) => {
+                this.$store.commit("writePhotos", response.data);
             }, (response) => {
                 console.error(response);
             });
         },
 
         methods: {
-
-            selectThisPhoto(photo, index = null) {
-
-                if (index !== null) {
-                    photo.index = index;
-                }
-
-                window.EventDispatcher.fire("photoHasBeenSelected", photo);
+            selectThisPhoto(photo, index) {
+                this.$store.commit("changeSelectedPhoto", {photo, index});
             },
         },
     }
@@ -81,4 +59,8 @@
     display: block;
     max-width: 100%;
 }
+
+
+
+
 </style>
