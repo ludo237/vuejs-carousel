@@ -1,6 +1,32 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+
+## [0.3] - 23-12-2016
+
+### Added
+- Add Vuex ad dependency
+- Add a new folder that contains the store system built with Vuex
+- Add components name
+- Add Type on components properties
+
+### Changed
+- Improve the quality of the components with a complete refactor
+
+### Fixed
+- Fix typo on readme
+
+### Removed
+- Remove useless spacing inside the files
+- Remove the old shared events handler
+
+
+## [0.2.1] - 07-12-2016
+
+### Fixed
+- Fix a problem with npmjs.org sync
+
+
 ## [0.2] - 07-12-2016
 
 ### Added
@@ -14,6 +40,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 - Fix position of Theater component
+
 
 ## [0.1] - 29-11-2016
 
