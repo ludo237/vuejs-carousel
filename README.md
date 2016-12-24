@@ -11,7 +11,7 @@
 [![bitHound Dev Dependencies](https://www.bithound.io/github/ludo237/vuejs-carousel/badges/devDependencies.svg)](https://www.bithound.io/github/ludo237/vuejs-carousel/master/dependencies/npm)
 [![bitHound Code](https://www.bithound.io/github/ludo237/vuejs-carousel/badges/code.svg)](https://www.bithound.io/github/ludo237/vuejs-carousel)
 
-# VueJs Carousel
+# VueJs Carousel [![Awesome VueJs](https://cdn.rawgit.com/sindresorhus/awesome/master/media/logo.svg)]
 
     Easy to use VueJS component for Photo galleries, built with VueJS and web standards in mind
 
@@ -19,7 +19,7 @@
 
 - Either download or clone this repository
 - Run `npm install` this will install all the necessary tools from NPM
-- Run `npm run dev` this will create the dist folder
+- Run `npm run postinstall` this will create the dist folder
 - Grab the file inside the dist folder and follow the [How to use section](#how-to-use)
 
 
@@ -28,10 +28,11 @@ This carousel is pretty easy to use. Put the source code inside your page:
 
      <script src="dist/carousel.js"></script>
 
-Add the component to your page:
+Add the components to your page like the example:
 
     <div id="your-application-id">
-      <carousel source="your-api-source"></carousel>
+        <photos source="https://jsonplaceholder.typicode.com/photos?_limit=10"></photos>
+        <theater></theater>
     </div>
 
 Try it with a source, for example you can use [Json Placeholder](http://jsonplaceholder.typicode.com/photos?_limit=10)
@@ -48,7 +49,7 @@ The current state of the component uses an array of `photos` object and it expec
 
 **Be Aware**: If you have a different API structure you have to change the code a little bit in particular
 you have to change the attributes of `selectedPhoto` and of `photos`. I will try to make this as dynamic as 
-possibile but I'm still learning Javascript.
+possible soon...
 
 
 ## License
