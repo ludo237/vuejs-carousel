@@ -11,7 +11,7 @@
 [![bitHound Dev Dependencies](https://www.bithound.io/github/ludo237/vuejs-carousel/badges/devDependencies.svg)](https://www.bithound.io/github/ludo237/vuejs-carousel/master/dependencies/npm)
 [![bitHound Code](https://www.bithound.io/github/ludo237/vuejs-carousel/badges/code.svg)](https://www.bithound.io/github/ludo237/vuejs-carousel)
 
-# VueJs Carousel [![Awesome VueJs](https://cdn.rawgit.com/sindresorhus/awesome/master/media/logo.svg)]
+# VueJs Carousel [![Awesome Vue](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/vuejs/awesome-vue)
 
     Easy to use VueJS component for Photo galleries, built with VueJS and web standards in mind
 
