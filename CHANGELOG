@@ -2,6 +2,21 @@
 All notable changes to this project will be documented in this file.
 
 
+## [0.4] - 27-12-2016
+
+### Added
+- Add new Photo component
+- Add new badge on index.html
+
+### Changed
+- Optimize Theater component
+- Improve the changeSelectedPhoto function on vuex
+- Improve code quality in order to have some standards across the source code
+
+### Removed
+- Remove index as second parameter to change the Photo
+
+
 ## [0.3] - 23-12-2016
 
 ### Added
