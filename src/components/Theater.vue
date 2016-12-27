@@ -62,13 +62,11 @@
 
         methods: {
             previousPhoto() {
-                let photo = this.$store.getters.photos[this.photoIndex - 1];
-                this.$store.commit("changeSelectedPhoto", photo);
+                this.$store.commit("previousPhotoOfIndex", this.photoIndex - 1);
             },
 
             nextPhoto() {
-                let photo = this.$store.getters.photos[this.photoIndex + 1];
-                this.$store.commit("changeSelectedPhoto", photo);
+                this.$store.commit("nextPhotoOfIndex", this.photoIndex + 1);
             },
 
             closeTheater() {
@@ -79,7 +77,7 @@
     }
 </script>
 
-<style>
+<style scoped>
 .Theater {
     position: fixed;
     top: 0;
