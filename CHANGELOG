@@ -2,6 +2,20 @@
 All notable changes to this project will be documented in this file.
 
 
+## [0.4.2]
+
+### Added
+- previousPhotoOfIndex mutation
+- nextPhotoOfIndex mutation
+
+### Changed
+- Improve theater nextPhoto and previousPhoto methods
+- Add new fancy comments 
+
+### Fixed
+- Fix changeSelectedPhoto not working correctly with undefined variables
+
+
 ## [0.4.1]
 
 ### Fixed

@@ -1,7 +1,7 @@
 {
   "name": "vuejs-carousel",
   "description": "Complete photo carousel build with VueJS and web standards in mind",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "author": "Claudio Ludovico Panetta <ludovico1990@hotmail.it>",
   "private": false,
   "license": "MIT",
