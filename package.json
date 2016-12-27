@@ -16,7 +16,7 @@
   "main": "src/carousel.js",
   "scripts": {
     "dev": "webpack-dev-server --open --inline --hot",
-    "postinstall": "webpack"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
