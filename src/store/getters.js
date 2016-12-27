@@ -31,10 +31,18 @@ export const getters = {
      * "selectedPhoto" state
      *
      * @param state
-     * @param getters
      * @returns {boolean}
      */
-    isPhotoSelected: (state, getters) => {
-        return Object.keys(getters.selectedPhoto).length > 0;
+    isPhotoSelected: (state) => {
+        return Object.keys(state.selectedPhoto).length > 0;
+    },
+
+    /**
+     *
+     * @param state
+     * @returns {number}
+     */
+    photoIndex: state => {
+        return state.photos.indexOf(state.selectedPhoto);
     }
 };

@@ -8,12 +8,12 @@
                     </figure>
                     <div class="Theater__commands">
                         <div class="Theater__command">
-                            <a href="#previous" @click.prevent="previousPhoto(selectedPhoto.index)">
+                            <a href="#previous" @click.prevent="previousPhoto()">
                                 <i class="fa fa-fw fa-lg fa-4x fa-angle-double-left" aria-hidden="true"></i>
                             </a>
                         </div>
                         <div class="Theater__command">
-                            <a href="#next" @click.prevent="nextPhoto(selectedPhoto.index)">
+                            <a href="#next" @click.prevent="nextPhoto()">
                                 <i class="fa fa-fw fa-lg fa-4x fa-angle-double-right" aria-hidden="true"></i>
                             </a>
                         </div>
@@ -22,7 +22,7 @@
             </div>
             <div class="Theater__information">
                 <div class="Theater__header">
-                    <h4></h4>
+                    <h4 v-text="selectedPhoto.title"></h4>
                     <div class="Theater__command Theater__command--header">
                         <a href="#close-theater" @click.prevent="closeTheater">
                             <i class="fa fa-fw fa-lg fa-times" aria-hidden="true"></i>
@@ -38,37 +38,13 @@
 
 <script>
     export default {
-        name: "Theater",
+        name: "theater",
 
-        methods: {
-            previousPhoto(index) {
-
-                index--;
-                let payload = {};
-                if (index > 0) {
-                    payload.photo = this.$store.getters.photos[index]
-                    payload.index = index;
-                }
-
-                this.$store.commit("changeSelectedPhoto", payload);
+        computed: {
+            photoIndex() {
+                return this.$store.getters.photoIndex;
             },
 
-            nextPhoto(index) {
-                index++;
-                let payload = {};
-                if (index <= this.$store.getters.photos.length - 1) {
-                    payload.photo = this.$store.getters.photos[index]
-                    payload.index = index;
-                }
-                this.$store.commit("changeSelectedPhoto", payload);
-            },
-
-            closeTheater() {
-                this.$store.commit("changeSelectedPhoto", {});
-            },
-        },
-
-         computed: {
             selectedPhoto() {
                 return this.$store.getters.selectedPhoto;
             },
@@ -83,6 +59,23 @@
                 }
             },
         },
+
+        methods: {
+            previousPhoto() {
+                let photo = this.$store.getters.photos[this.photoIndex - 1];
+                this.$store.commit("changeSelectedPhoto", photo);
+            },
+
+            nextPhoto() {
+                let photo = this.$store.getters.photos[this.photoIndex + 1];
+                this.$store.commit("changeSelectedPhoto", photo);
+            },
+
+            closeTheater() {
+                this.$store.commit("changeSelectedPhoto", {});
+            },
+        },
+
     }
 </script>
 
@@ -172,16 +165,4 @@
 .Theater__command--header > a {
     color: black;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 </style>

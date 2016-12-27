@@ -13,7 +13,10 @@ const carousel = new Vue({
 
     store,
 
-    components: {Photos, Theater},
+    components: {
+        Photos,
+        Theater
+    },
 
     mounted() {
         // Debug purpose

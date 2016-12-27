@@ -1,24 +1,28 @@
 <template id="photos">
     <ul class="Photos">
-        <li class="Photo" v-for="(photo, index) in photos">
-            <figure class="Photo__container">
-                <img class="Photo__source" :src="photo.thumbnailUrl" @click="selectThisPhoto(photo, index)"/>
-            </figure>
-        </li>
+        <photo v-for="photo in photos" :photo="photo"></photo>
     </ul>
 </template>
 
 <script>
-    export default {
-        name: "Photos",
+    import Photo from "./Photo.vue";
 
-        props: {
-            source: { Type: String }
+    export default {
+        name: "photos",
+
+        components: {
+            Photo
         },
 
         computed: {
             photos() {
                 return this.$store.getters.photos
+            }
+        },
+
+        props: {
+            source: {
+                Type: String
             }
         },
 
@@ -28,12 +32,6 @@
             }, (response) => {
                 console.error(response);
             });
-        },
-
-        methods: {
-            selectThisPhoto(photo, index) {
-                this.$store.commit("changeSelectedPhoto", {photo, index});
-            },
         },
     }
 </script>
@@ -59,8 +57,4 @@
     display: block;
     max-width: 100%;
 }
-
-
-
-
 </style>
