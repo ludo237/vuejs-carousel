@@ -18,5 +18,5 @@ import {mutations} from "./mutations";
 export const store = new Vuex.Store({
     state,
     getters,
-    mutations,
+    mutations
 });

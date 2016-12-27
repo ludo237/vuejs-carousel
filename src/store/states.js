@@ -11,5 +11,5 @@ export const state = {
      * List of photos available inside
      * the gallery.
      */
-    photos: [],
+    photos: []
 };
