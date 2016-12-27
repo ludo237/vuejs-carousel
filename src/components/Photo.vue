@@ -30,3 +30,18 @@
         },
     }
 </script>
+
+<style scoped>
+.Photo {
+    list-style-type: none;
+}
+
+.Photo__container {
+    display: block;
+}
+
+.Photo_source {
+    display: block;
+    max-width: 100%;
+}
+</style>

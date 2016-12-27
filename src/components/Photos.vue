@@ -36,25 +36,12 @@
     }
 </script>
 
-<style>
+<style scoped>
 .Photos {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
-}
-
-.Photo {
-    list-style-type: none;
-}
-
-.Photo__container {
-    display: block;
-}
-
-.Photo_source {
-    display: block;
-    max-width: 100%;
 }
 </style>
