@@ -4,6 +4,6 @@ export const mutations = {
     },
 
     changeSelectedPhoto(state, photo) {
-        state.selectedPhoto = (photo != null && Object.keys(photo).length > 0) ? photo : {};
+        state.selectedPhoto = ((photo !== undefined || photo !== null) && Object.keys(photo).length > 0) ? photo : {};
     }
 };

@@ -2,7 +2,13 @@
 All notable changes to this project will be documented in this file.
 
 
-## [0.4] - 27-12-2016
+## [0.4.1]
+
+### Fixed
+- Fix a problem on changeSelectedPhoto mutation
+
+
+## [0.4.0] - 27-12-2016
 
 ### Added
 - Add new Photo component
@@ -17,7 +23,7 @@ All notable changes to this project will be documented in this file.
 - Remove index as second parameter to change the Photo
 
 
-## [0.3] - 23-12-2016
+## [0.3.0] - 23-12-2016
 
 ### Added
 - Add Vuex ad dependency
@@ -42,7 +48,7 @@ All notable changes to this project will be documented in this file.
 - Fix a problem with npmjs.org sync
 
 
-## [0.2] - 07-12-2016
+## [0.2.0] - 07-12-2016
 
 ### Added
 - Add Theater component
@@ -57,7 +63,7 @@ All notable changes to this project will be documented in this file.
 - Fix position of Theater component
 
 
-## [0.1] - 29-11-2016
+## [0.1.0] - 29-11-2016
 
 ### Added
 - Add first version of the carousel component
