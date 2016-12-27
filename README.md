@@ -19,11 +19,12 @@
 
 - Either download or clone this repository
 - Run `npm install` this will install all the necessary tools from NPM
-- Run `npm run postinstall` this will create the dist folder
+- Run `npm run build` this will create the dist folder
 - Grab the file inside the dist folder and follow the [How to use section](#how-to-use)
 
 
 ## How to use
+
 This carousel is pretty easy to use. Put the source code inside your page:
 
      <script src="dist/carousel.js"></script>
@@ -39,6 +40,7 @@ Try it with a source, for example you can use [Json Placeholder](http://jsonplac
 
 
 ## Configuration
+
 The current state of the component uses an array of `photos` object and it expects this attributes:
 
 - albumId
@@ -51,6 +53,9 @@ The current state of the component uses an array of `photos` object and it expec
 you have to change the attributes of `selectedPhoto` and of `photos`. I will try to make this as dynamic as 
 possible soon...
 
+## Contributing
+
+If you want to contribute to this project issues and pull requests are welcome!
 
 ## License
 
