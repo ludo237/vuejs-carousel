@@ -17,10 +17,13 @@
 
 ## How to install
 
-- Either download or clone this repository
-- Run `npm install` this will install all the necessary tools from NPM
-- Run `npm run build` this will create the dist folder
-- Grab the file inside the dist folder and follow the [How to use section](#how-to-use)
+In order to use the carousel you have to follow 3 simple steps:
+
+- Install the package from npm `npm install vuejs-carousel --save`
+- Go into your Vue main file or main javascript file
+- Import the carousel `import {Photo, Photos, Theater} from "vuejs-carousel"`
+- Add the component inside your views
+
 
 
 ## How to use
@@ -55,7 +58,12 @@ possible soon...
 
 ## Contributing
 
-If you want to contribute to this project issues and pull requests are welcome!
+If you want to contribute to this project issues and pull requests are welcome! In order to get started with the code you should:
+
+- Either download or clone this repository
+- Run `npm install` this will install all the necessary dependencies
+- Run `npm run dev`
+- Start coding :smile:
 
 ## License
 

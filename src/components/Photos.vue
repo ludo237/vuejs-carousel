@@ -27,12 +27,8 @@
         },
 
         mounted() {
-            this.$http.get(this.source).then((response) => {
-                this.$store.commit("writePhotos", response.data);
-            }, (response) => {
-                console.error(response);
-            });
-        },
+            this.$store.dispatch("loadPhotos", this.source);
+        }
     }
 </script>
 

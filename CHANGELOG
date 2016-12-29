@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file.
 
 
+## [0.4.3]
+
+### Added
+- Add new action file for the Vuex store.
+- Add new "hot to install" section inside readme
+- Add new Axios library for HTTP calls
+- Add new "Contributing guidelines" section inside readme
+
+
 ## [0.4.2]
 
 ### Added

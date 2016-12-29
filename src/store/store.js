@@ -1,10 +1,10 @@
 import Vue from "vue";
 import Vuex from "vuex";
-Vue.use(Vuex);
-
 import {state} from "./states";
 import {getters} from "./getters";
 import {mutations} from "./mutations";
+import {actions} from "./actions";
+Vue.use(Vuex);
 
 /**
  * Carousel main store
@@ -18,5 +18,6 @@ import {mutations} from "./mutations";
 export const store = new Vuex.Store({
     state,
     getters,
-    mutations
+    mutations,
+    actions
 });
