@@ -1,7 +1,7 @@
 <template>
     <li class="Photo">
         <figure class="Photo__container">
-            <img class="Photo__source" :src="thumbnail" @click="selectThisPhoto(photo)"/>
+            <img class="Photo__source" :src="photo.thumbnail" @click="selectThisPhoto(photo)"/>
         </figure>
     </li>
 </template>
@@ -15,12 +15,6 @@
                 type: Object,
                 required: true
             },
-        },
-
-        computed: {
-            thumbnail() {
-                return this.photo.thumbnailUrl;
-            }
         },
 
         methods: {

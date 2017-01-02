@@ -2,11 +2,11 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/carousel.js',
+    entry: './src/example.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'carousel.js'
+      filename: 'example.js'
   },
   module: {
     rules: [

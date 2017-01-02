@@ -2,6 +2,26 @@
 All notable changes to this project will be documented in this file.
 
 
+## [0.5.0]
+
+### Added
+- Add new Comment component
+- Add new Comments component
+- Add comments component to Theater component
+- Add new moment.js dependency
+
+### Changed
+- Change dist name from "carousel.js" to "example.js" in order to separate example from the source
+- Improve import system for distributing the package with npmjs
+- Improve Photo component
+- Improve Theater component DOM tree
+- Improve Theater component flexbox system
+- Improve README and general documentation
+
+### Removed
+- Remove vue instance from carousel.js
+
+
 ## [0.4.3]
 
 ### Added

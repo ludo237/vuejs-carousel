@@ -21,16 +21,15 @@ In order to use the carousel you have to follow 3 simple steps:
 
 - Install the package from npm `npm install vuejs-carousel --save`
 - Go into your Vue main file or main javascript file
-- Import the carousel `import {Photo, Photos, Theater} from "vuejs-carousel"`
+- Import the carousel `import {store, Photos, Theater} from "vuejs-carousel"`
 - Add the component inside your views
-
 
 
 ## How to use
 
 This carousel is pretty easy to use. Put the source code inside your page:
 
-     <script src="dist/carousel.js"></script>
+     <script src="dist/example.js"></script>
 
 Add the components to your page like the example:
 
@@ -44,17 +43,25 @@ Try it with a source, for example you can use [Json Placeholder](http://jsonplac
 
 ## Configuration
 
-The current state of the component uses an array of `photos` object and it expects this attributes:
+The current state of the component uses an array of `photos` objects and it expects this attributes:
 
-- albumId
 - id
-- thumbnailUrl
-- title
-- url
+- thumbnail
+- photo
+- name
+- body
+- created_at
+- comments *array*
+    - id
+    - name
+    - body
+    - created_at
 
 **Be Aware**: If you have a different API structure you have to change the code a little bit in particular
 you have to change the attributes of `selectedPhoto` and of `photos`. I will try to make this as dynamic as 
 possible soon...
+
+The source of the API is provided by [Mockaroo](https://www.mockaroo.com/8e9a75b0)
 
 ## Contributing
 

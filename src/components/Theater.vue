@@ -1,44 +1,47 @@
 <template id="theater">
     <div class="Theater" :class="isTheaterClose">
         <div class="Theater__room">
-            <div class="Theater__stage">
-                <template v-if="isPhotoSelected">
+            <template v-if="isPhotoSelected">
+                <div class="Theater__stage">
                     <figure class="Theater__figure">
-                        <img :src="selectedPhoto.url" class="Theater__image"/>
+                        <img :src="selectedPhoto.photo" class="Theater__image"/>
                     </figure>
                     <div class="Theater__commands">
-                        <div class="Theater__command">
-                            <a href="#previous" @click.prevent="previousPhoto()">
-                                <i class="fa fa-fw fa-lg fa-4x fa-angle-double-left" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                        <div class="Theater__command">
-                            <a href="#next" @click.prevent="nextPhoto()">
-                                <i class="fa fa-fw fa-lg fa-4x fa-angle-double-right" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </div>
-                </template>
-            </div>
-            <div class="Theater__information">
-                <div class="Theater__header">
-                    <h4 v-text="selectedPhoto.title"></h4>
-                    <div class="Theater__command Theater__command--header">
-                        <a href="#close-theater" @click.prevent="closeTheater">
-                            <i class="fa fa-fw fa-lg fa-times" aria-hidden="true"></i>
+                        <a class="Theater__command" href="#previous" @click.prevent="previousPhoto()">
+                            <i class="fa fa-fw fa-lg fa-4x fa-angle-double-left" aria-hidden="true"></i>
+                        </a>
+                        <a class="Theater__command" href="#next" @click.prevent="nextPhoto()">
+                            <i class="fa fa-fw fa-lg fa-4x fa-angle-double-right" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
-                <div class="Theater_body">
+                <div class="Theater__information">
+                    <div class="Theater__header">
+                        <div class="Header__title">
+                            <h4 class="Title__text" v-text="selectedPhoto.name"></h4>
+                            <h6 class="Title__date" v-text="selectedPhoto.created_at"></h6>
+                        </div>
+                        <a class="Theater__command Theater__command--header" href="#close-theater" @click.prevent="closeTheater">
+                            <span aria-hidden="true">&times;</span>
+                        </a>
+                    </div>
+                    <div class="Theater__body" v-text="selectedPhoto.body"></div>
+                    <comments></comments>
                 </div>
-            </div>
+            </template>
         </div>
     </div>
 </template>
 
 <script>
+    import Comments from "./Comments.vue";
+
     export default {
         name: "theater",
+
+        components: {
+            Comments,
+        },
 
         computed: {
             photoIndex() {
@@ -58,6 +61,10 @@
                     "Theater--closed": !this.isPhotoSelected,
                 }
             },
+
+            hasComments() {
+                return this.selectedPhoto.comments.length > 0;
+            },
         },
 
         methods: {
@@ -72,8 +79,7 @@
             closeTheater() {
                 this.$store.commit("changeSelectedPhoto", {});
             },
-        },
-
+        }
     }
 </script>
 
@@ -84,15 +90,12 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.85);
-    background: url(data:;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6Q…VUIHYzLjUuNUmK/OAAAAATSURBVBhXY2RgYNgHxGAAYuwDAA78AjwwRoQYAAAAAElFTkSuQmCC) repeat scroll transparent\9;
     z-index: 2370;
     color: white;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
     align-items: center;
+    justify-content: center
 }
 
 .Theater--closed {
@@ -101,38 +104,50 @@
 
 .Theater__room {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: row;
-    padding: 0;
+    justify-content: center;
     margin: 0;
-    background: black;
+    padding: 0;
 }
 
 .Theater__information {
     background: white;
     color: black;
-    width: 25%;
+    max-height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 300px;
 }
 
 .Theater__header {
+    align-items: baseline;
     display: flex;
     justify-content: space-between;
-    padding: 1rem 1rem 0 1rem;
+    padding: 1.2rem 1.2rem 0 1.2rem;
+}
+
+.Header__title {
+    flex-wrap: wrap;
+}
+
+.Title__text {
+    flex-wrap: wrap;
+    font-weight: bold;
+}
+
+.Title__date {
+    color: gray;
+    font-size: .8em;
 }
 
 .Theater__body {
-    display: block;
+    padding: 1.2rem;
 }
 
 .Theater__stage {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    position: relative;
-    flex-direction: column;
-    width: 75%;
     align-items: center;
+    background-color: black;
+    display: flex;
+    position: relative;
 }
 
 .Theater__figure {
@@ -149,18 +164,20 @@
 .Theater__commands {
     display: flex;
     justify-content: space-between;
-    width: 100%;
     position: absolute;
     top: 50%;
-    left: 0;
-    right: 0;
+    width: 100%;
+    z-index: 1;
 }
-.Theater__command > a {
+
+.Theater__command {
     color: white;
     text-decoration: none;
 }
 
-.Theater__command--header > a {
+.Theater__command--header {
     color: black;
+    font-weight: bold;
+    font-size: 1.8rem;
 }
 </style>
