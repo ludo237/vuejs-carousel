@@ -34,11 +34,11 @@ This carousel is pretty easy to use. Put the source code inside your page:
 Add the components to your page like the example:
 
     <div id="your-application-id">
-        <photos source="https://jsonplaceholder.typicode.com/photos?_limit=10"></photos>
+        <photos source="https://www.mockaroo.com/8e9a75b0/download?count=10&key=e2db8d80"></photos>
         <theater></theater>
     </div>
 
-Try it with a source, for example you can use [Json Placeholder](http://jsonplaceholder.typicode.com/photos?_limit=10)
+Try it with a source, for example you can use [Mockaroo](https://www.mockaroo.com/8e9a75b0)
 
 
 ## Configuration
