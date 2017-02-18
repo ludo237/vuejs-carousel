@@ -4,13 +4,13 @@
             <template v-if="isPhotoSelected">
                 <div class="Theater__stage">
                     <figure class="Theater__figure">
-                        <img :src="selectedPhoto.photo" class="Theater__image"/>
+                        <img :src="selectedPhoto.photo" class="Theater__image" />
                     </figure>
                     <div class="Theater__commands">
-                        <a class="Theater__command" href="#previous" @click.prevent="previousPhoto()">
+                        <a class="Theater__command" href="#previous" @click.prevent="previousPhoto">
                             <i class="fa fa-fw fa-lg fa-4x fa-angle-double-left" aria-hidden="true"></i>
                         </a>
-                        <a class="Theater__command" href="#next" @click.prevent="nextPhoto()">
+                        <a class="Theater__command" href="#next" @click.prevent="nextPhoto">
                             <i class="fa fa-fw fa-lg fa-4x fa-angle-double-right" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -38,6 +38,14 @@
 
     export default {
         name: "theater",
+
+        beforeDestroy() {
+            window.removeEventListener("keyup", this.checkPressedKey, false);
+        },
+
+        created() {
+            window.addEventListener("keyup", this.checkPressedKey);
+        },
 
         components: {
             Comments,
@@ -68,6 +76,22 @@
         },
 
         methods: {
+            checkPressedKey(e) {
+                e = e || window.event;
+
+                switch (e.keyCode) {
+                    case 27: // escape key
+                        this.closeTheater();
+                        break;
+                    case 37: // left arrow key code
+                        this.previousPhoto();
+                        break;
+                    case 39: // right arrow key code
+                        this.nextPhoto();
+                        break;
+                }
+            },
+
             previousPhoto() {
                 this.$store.commit("previousPhotoOfIndex", this.photoIndex - 1);
             },
